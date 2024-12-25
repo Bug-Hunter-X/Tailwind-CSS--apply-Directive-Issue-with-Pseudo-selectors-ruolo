@@ -1,0 +1,21 @@
+The solution is to avoid using `@apply` for pseudo-selectors. Apply the hover styles directly to the HTML element:
+
+```html
+<button class="bg-blue-500 hover:bg-blue-700">Click Me</button>
+```
+
+Alternatively, you can create separate classes for the base state and hover state and apply them separately:
+
+```css
+/* styles.css */
+.btn {
+  @apply bg-blue-500;
+}
+
+.btn:hover {
+  @apply bg-blue-700;
+}
+
+/* HTML */
+<button class="btn">Click Me</button>
+```
